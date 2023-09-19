@@ -1,6 +1,6 @@
 {
   "name": "@focme/create-rsk",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "a scaffold for react ssr with koa2",
   "main": "./src/index.js",
   "type": "module",
@@ -18,7 +18,6 @@
   },
   "devDependencies": {
     "@focme/rollup-plugin-pick": "^0.0.2",
-    "@rollup/plugin-node-resolve": "^15.2.0",
     "@rollup/plugin-terser": "^0.4.3",
     "rimraf": "^5.0.1",
     "rollup": "^3.28.0",

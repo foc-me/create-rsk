@@ -1,4 +1,3 @@
-import resolve from "@rollup/plugin-node-resolve"
 import terser from "@rollup/plugin-terser"
 import copy from "rollup-plugin-copy"
 import pick from "@focme/rollup-plugin-pick"
@@ -11,7 +10,6 @@ export default {
         banner: "#!/usr/bin/env node"
     },
     plugins: [
-        resolve(),
         terser({
             mangle: { toplevel: true }
         }),
@@ -30,7 +28,8 @@ export default {
             ["files", ["index.js", "readme.md", "package.json"]],
             "author",
             "repository",
-            "license"
+            "license",
+            "dependencies"
         ])
     ]
 }
