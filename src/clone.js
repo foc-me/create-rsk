@@ -3,7 +3,10 @@ import { spawn } from "node:child_process"
 const { stdout } = process
 const rskTemplate = "https://github.com/foc-me/rsk-template.git"
 
-function makeBranch(ts, react) {
+function makeBranch(option) {
+    const { lib, ts, react } = option
+    if (lib && ts) return "lib-ts"
+    if (lib) return "lib"
     if (ts && react) return "koa-react-ts"
     if (react) return "koa-react"
     if (ts) return "koa-ts"
@@ -11,13 +14,13 @@ function makeBranch(ts, react) {
 }
 
 function makeArgs(option) {
-    const { ts, react, director } = option
+    const { lib, ts, react, director } = option
     return [
         "clone",
         rskTemplate,
         director,
         "-b",
-        makeBranch(ts, react),
+        makeBranch({ lib, ts, react }),
         "--single-branch",
         "--progress"
     ]

@@ -9,7 +9,8 @@ function ask(message) {
 
 function yes(message) {
     return ask(message).then(res => {
-        return ["y", "yes"].includes(res.toLowerCase())
+        const lowerRes = res.toLowerCase()
+        return ["y", "yes"].includes(lowerRes) || /^y+$/g.test(lowerRes)
     })
 }
 

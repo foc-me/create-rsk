@@ -1,0 +1,11 @@
+**/.DS_Store
+*.local
+*.log
+.vscode
+.idea
+node_modules
+dist
+coverage
+yarn.lock
+pnpm-lock.yaml
+package-lock.json

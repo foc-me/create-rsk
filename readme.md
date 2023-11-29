@@ -2,17 +2,38 @@
 
 a initial cli for react ssr with koa2  
 
-## usage  
+## command  
 
 ```shell
-# create
-yarn create @focme/rsk ssr-template
+# create project in current dir
+npm create @focme/rsk <project-name>
+# or
+# create project in specified dir
+npm create @focme/rsk <project-path> <project-name>
 ```
+
+## option  
 
 ```shell
-# add
-yarn global add @focme/create-rsk
-
-# create
-create-rsk ssr-template
+npm create @focme/rsk <project-path> <project-name> --options
 ```
+
+|option |describe          |
+|-------|------------------|
+|--lib  |create lib project|
+|--ts   |use typescript    |
+|--react|use react         |
+
+**--lib**  
+
+create `rollup` project with `--lib`  
+or create `webpack` + `koa` project without `--lib`  
+
+**--react**  
+
+use react  
+can not use with `--lib`
+
+**--ts**  
+
+use typescript  
