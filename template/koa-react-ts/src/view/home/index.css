@@ -1,0 +1,6 @@
+:local(.home) {
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    & h2 { color: #00008f; font-size: 45px; }
+}
