@@ -11,9 +11,8 @@ async function rsk() {
             dir = "./"
         }
         if (project === undefined) project = await ask("project name: ")
-        if (lib === undefined) {
-            if (react === undefined) react = await yes("use react? (y/n): ")
-        }
+        if (lib !== undefined) react = undefined
+        else if (react === undefined) react = await yes("use react? (y/n): ")
         if (ts === undefined) ts = await yes("use typescript? (y/n): ")
         const description = await ask("project description: ")
         const author = await ask("project author: ")
