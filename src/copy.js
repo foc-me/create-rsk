@@ -3,7 +3,7 @@ import path from "node:path"
 import { ask, yes } from "./ask"
 
 const { stdout: output } = process
-const templateHome = path.resolve(__dirname, "../template")
+const templateHome = path.resolve(__dirname, "./template")
 
 function makeTemplate(option) {
     const { lib, ts, react } = option

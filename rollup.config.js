@@ -15,6 +15,7 @@ export default {
         }),
         copy({
             targets: [
+                { src: ["./template"], dest: "./dist" },
                 { src: ["./readme.md"], dest: "./dist" }
             ]
         }),
@@ -25,7 +26,7 @@ export default {
             ["main", "./index.js"],
             "description",
             "keywords",
-            ["files", ["index.js", "readme.md", "package.json"]],
+            ["files", ["index.js", "readme.md", "package.json", "template"]],
             "author",
             "repository",
             "license",
