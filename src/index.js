@@ -8,7 +8,7 @@ async function rsk() {
     try {
         if (!project) {
             project = dir
-            dir = "./"
+            dir = undefined
         }
         if (project === undefined) project = await ask("project name: ")
         if (lib !== undefined) react = undefined
