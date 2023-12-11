@@ -5,6 +5,4 @@
 .idea
 node_modules
 dist
-yarn.lock
-pnpm-lock.yaml
-package-lock.json
+coverage

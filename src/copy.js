@@ -49,8 +49,8 @@ async function copyFile(files, target) {
     const count = files.length
     let replace = undefined
     let current = 0
-    for (const [name, [template, ...dir]] of files) {
-        const originItemPath = path.resolve(templateHome, template, ...dir, name)
+    for (const [name, [template, ...dir], origin = name] of files) {
+        const originItemPath = path.resolve(templateHome, template, ...dir, origin)
         
         const targetPath = path.resolve(target, ...dir)
         const targetItemPath = path.resolve(targetPath, name)
@@ -72,13 +72,24 @@ async function copyFile(files, target) {
         output.clearLine(0)
         output.cursorTo(0)
         output.write(`[${++current}/${count}] ${targetItemPath}`)
+        // output.write(`\n`)
         await new Promise(resolve => {
             setTimeout(() => resolve(), 10)
         })
     }
     output.clearLine(0)
     output.cursorTo(0)
-    output.write(`\n`)
+}
+
+function makeIgnore(template) {
+    switch (template) {
+        case "lib-ts":
+        case "lib": return "lib.gitignore"
+        case "koa-react-ts": return "koa-react-ts.gitignore"
+        case "koa-react": return "koa-react.gitignore"
+        case "koa": return "koa.gitignore"
+        default: return
+    }
 }
 
 async function copy(option) {
@@ -93,6 +104,12 @@ async function copy(option) {
         }
         return [item, [template]]
     })
+    const ignoreFile = makeIgnore(template)
+    const ignorePath = path.resolve(templateHome, "ignore", ignoreFile)
+    if (fs.existsSync(ignorePath) && fs.statSync(ignorePath).isFile()) {
+        templateFiles.push([".gitignore", ["ignore"], ignoreFile])
+    }
+    console.log(templateFiles)
     await copyFile(templateFiles, director)
 }
 
