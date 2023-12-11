@@ -7,8 +7,8 @@ module.exports = {
     input: "./lib/index.ts",
     output: [
         { dir: "./dist/esm", format: "esm" },
-        // should change the name "rsk-lib"
-        { dir: "./dist/dist", format: "umd", name: "rsk-lib" }
+        // should change the name "project-name"
+        { dir: "./dist/dist", format: "umd", name: "project-name" }
     ],
     plugins: [
         typescript({

@@ -1,9 +1,9 @@
 {
-  "name": "lib",
+  "name": "project-name",
   "version": "0.0.1",
-  "description": "a lib project template with rollup",
+  "description": "project-description",
   "main": "index.js",
-  "author": "focme",
+  "author": "project-author",
   "license": "MIT",
   "private": true,
   "type": "module",
