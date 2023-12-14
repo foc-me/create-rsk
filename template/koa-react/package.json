@@ -1,16 +1,14 @@
 {
-  "name": "rsk-template",
+  "name": "project-name",
   "version": "0.0.1",
-  "description": "react ssr with koa",
-  "main": "index.js",
-  "author": "focme",
+  "description": "project-description",
+  "author": "project-author",
   "license": "MIT",
   "scripts": {
     "start": "node ./script/build.js client --mode development && nodemon --exec \"node ./script/build.js service --mode development && node ./dist/index.js\"",
     "start:spa": "node ./script/start.js --mode development",
     "build": "node ./script/build.js",
     "build:dist": "node ./script/build.js client service",
-    "build:tsc": "tsc",
     "build:service": "node ./script/build.js service",
     "build:client": "node ./script/build.js client",
     "build:spa": "node ./script/build.js spa",
@@ -39,7 +37,6 @@
     "react-router-dom": "^6.16.0",
     "rimraf": "^5.0.1",
     "style-loader": "^3.3.3",
-    "typescript": "^5.1.6",
     "webpack": "^5.88.2",
     "webpack-dev-server": "^4.15.1",
     "webpack-merge": "^5.9.0"

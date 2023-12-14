@@ -1,9 +1,8 @@
 {
-  "name": "dc-qsn",
+  "name": "project-name",
   "version": "0.0.1",
-  "description": "questionnaire system for dc",
-  "main": "index.js",
-  "author": "dimcroon",
+  "description": "project-description",
+  "author": "project-author",
   "license": "MIT",
   "scripts": {
     "start": "nodemon --exec \"node ./script/build.js --mode development && node ./dist/index.js\"",
@@ -11,7 +10,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.22.11",
-    "@babel/preset-react": "^7.22.5",
     "@babel/preset-typescript": "^7.22.11",
     "@focme/argv": "^3.0.2",
     "@focme/rsk-util": "^1.0.1",

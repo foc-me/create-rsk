@@ -72,7 +72,6 @@ async function copyFile(files, target) {
         output.clearLine(0)
         output.cursorTo(0)
         output.write(`[${++current}/${count}] ${targetItemPath}`)
-        // output.write(`\n`)
         await new Promise(resolve => {
             setTimeout(() => resolve(), 10)
         })
@@ -109,7 +108,6 @@ async function copy(option) {
     if (fs.existsSync(ignorePath) && fs.statSync(ignorePath).isFile()) {
         templateFiles.push([".gitignore", ["ignore"], ignoreFile])
     }
-    console.log(templateFiles)
     await copyFile(templateFiles, director)
 }
 
